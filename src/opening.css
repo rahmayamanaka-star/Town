@@ -1,0 +1,40 @@
+:root { --story-type: clamp(58px, 7.4vw, 146px); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.opening-story { position: relative; height: 850svh; outline: none; --scan: 0; --scan-right: 100%; }
+.story-frame { position: sticky; top: 0; height: 100svh; }
+.about-stage { position: relative; height: 100%; width: 100%; overflow: hidden; background: #e9eade; }
+.reality-surface, .imagination-surface { position: absolute; inset: 0; }
+.reality-surface { z-index: 0; background: #e9eade; }
+.imagination-surface { z-index: 1; background-color: #f5f2d9; background-image: radial-gradient(#23271922 0.65px, transparent 0.85px); background-size: 6px 6px; clip-path: inset(0 var(--scan-right, 100%) 0 0); }
+.story-world { position: absolute; inset: 0; width: 100%; height: 100%; }
+@font-face { font-family: 'Town Brush'; src: url('./assets/town-brush.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+.story-type-layer { position: absolute; inset: 0; }
+.headline-window { position: absolute; z-index: 3; left: 6vw; top: 8vh; width: calc(var(--story-type) * 6); height: calc(var(--story-type) * 2.5); overflow: hidden; }
+.headline-text { font-size: var(--story-type); line-height: 1.12; letter-spacing: -0.075em; font-weight: 600; white-space: nowrap; }
+.brush-type { font-family: 'Town Brush', 'Microsoft YaHei', sans-serif; }
+.brush-type .headline-text { color: #fffef6; font-weight: 400; letter-spacing: 0.025em; -webkit-text-stroke: clamp(3px, 0.34vw, 6px) #151710; paint-order: stroke fill; filter: drop-shadow(2px 3px 0 #151710); }
+.brush-type .story-copy { font-size: clamp(22px, 1.8vw, 31px); letter-spacing: 0.02em; -webkit-text-stroke: 0.2px #151710; }
+.story-copy { position: absolute; z-index: 3; left: 6vw; bottom: 12vh; font-size: clamp(17px, 1.6vw, 27px); line-height: 1.65; letter-spacing: -0.04em; }
+.story-state { position: absolute; right: 6vw; top: 8vh; z-index: 3; font-size: clamp(18px, 2vw, 29px); }
+.story-note { position: absolute; bottom: 3vh; left: 6vw; z-index: 3; font-size: 15px; color: #4e5942; text-shadow: 1px 1px #d6d8c4, 2px 2px #8a9479, 3px 3px #8a9479; }
+.story-fallback { text-shadow: 1px 1px #d6d8c4, 2px 2px #8a9479; }
+.paper-cut-svg { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 6; pointer-events: none; visibility: hidden; overflow: visible; }
+.paper-scissors { filter: drop-shadow(3px 5px 0 #1a21192b); }
+.cut-paper-sheet { opacity: 0; }
+.cut-guide, .cut-guide-halo, .cut-seam { stroke-linecap: round; stroke-linejoin: round; }
+.story-fallback { position: absolute; bottom: 3vh; right: 6vw; z-index: 3; font-size: 15px; }
+.opening-overlay { position: fixed; inset: 0; z-index: 8; pointer-events: none; visibility: hidden; --scan-position: 0%; --scan-opacity: 0; --guides-opacity: 0; }
+.opening-overlay.has-entered { visibility: visible; }
+.portal-shade { position: absolute; inset: 0; z-index: 4; background: #11130e; }
+.wordmark-cover, .wordmark-ink { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.wordmark-cover { z-index: 5; }
+.wordmark-ink { z-index: 6; }
+.story-guides { position: absolute; inset: 0; z-index: 2; opacity: var(--guides-opacity); }
+.story-guides i:first-child { position: absolute; top: 0; bottom: 0; right: 6vw; border-left: 1px solid #30372533; }
+.story-guides i:nth-child(2) { position: absolute; left: 0; right: 0; top: 8vh; border-top: 1px solid #30372533; }
+.story-guides b { position: absolute; left: calc(6vw - 3px); top: calc(8vh - 3px); width: 7px; height: 7px; background: #11130e; border-radius: 50%; }
+.scan-cursor { position: absolute; z-index: 3; top: 0; bottom: 0; left: var(--scan-position); width: 2px; background: #151a10; box-shadow: -1px 0 #ffffffb3, 1px 0 #ffffffb3; opacity: var(--scan-opacity); }
+.scan-cursor::after { content: ''; position: absolute; left: -4px; top: 50%; width: 10px; height: 10px; background: #151a10; border: 2px solid #f5f2d9; border-radius: 50%; }
+.reduced-home { height: 100svh; display: grid; place-items: center; background: #11130e; outline: none; }
+.reduced-home svg { width: 83%; max-height: 50%; }
+.opening-reduced { height: 100svh; --scan-right: 0%; }

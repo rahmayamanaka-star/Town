@@ -1,0 +1,86 @@
+{
+  "researchedAt": "2026-11-17",
+  "scope": "Read-only official dependency research; no application or package edits, no installations.",
+  "recommendations": [
+    "React Bits ScrollFloat",
+    "React Bits ScrollReveal",
+    "GSAP with ScrollTrigger",
+    "Lenis optional"
+  ],
+  "sources": [
+    {
+      "repository": "DavidHDev/react-bits",
+      "commit": "d01aa914dcbe76da8b2923ebf872b5c8b1066e4c",
+      "license": "MIT + Commons Clause License Condition v1.0",
+      "licenseLocal": "react-bits/REACT-BITS-LICENSE.md",
+      "licenseUpstream": "LICENSE.md",
+      "components": [
+        {
+          "name": "ScrollFloat",
+          "recommended": true,
+          "source": "src/content/TextAnimations/ScrollFloat/ScrollFloat.jsx",
+          "local": "react-bits/ScrollFloat.jsx",
+          "cssSource": "src/content/TextAnimations/ScrollFloat/ScrollFloat.css",
+          "cssLocal": "react-bits/ScrollFloat.css",
+          "dependencies": [
+            "react",
+            "gsap",
+            "gsap/ScrollTrigger"
+          ]
+        },
+        {
+          "name": "ScrollReveal",
+          "recommended": true,
+          "source": "src/content/TextAnimations/ScrollReveal/ScrollReveal.jsx",
+          "local": "react-bits/ScrollReveal.jsx",
+          "cssSource": "src/content/TextAnimations/ScrollReveal/ScrollReveal.css",
+          "cssLocal": "react-bits/ScrollReveal.css",
+          "dependencies": [
+            "react",
+            "gsap",
+            "gsap/ScrollTrigger"
+          ]
+        },
+        {
+          "name": "SplitText",
+          "recommended": false,
+          "source": "src/content/TextAnimations/SplitText/SplitText.jsx",
+          "local": "react-bits/SplitText.jsx",
+          "dependencies": [
+            "react",
+            "gsap",
+            "gsap/ScrollTrigger",
+            "gsap/SplitText",
+            "@gsap/react"
+          ],
+          "note": "Alternative researched but not recommended; avoid extra hook dependency for this minimal website."
+        }
+      ]
+    },
+    {
+      "repository": "greensock/GSAP",
+      "commit": "5e6c35ff8eedea12d4f229129def635277d8b0f2",
+      "version": "3.15.1",
+      "license": "GSAP Standard License",
+      "licenseUrl": "https://gsap.com/standard-license",
+      "rootLicenseFile": false,
+      "localEvidence": [
+        "gsap/package.json",
+        "gsap/README.md",
+        "gsap/source-license-notice.txt"
+      ]
+    },
+    {
+      "repository": "darkroomengineering/lenis",
+      "commit": "bd89165aa6ab64c4ae68242c8d2a5e90b76ff77d",
+      "version": "1.3.27",
+      "license": "MIT",
+      "licenseLocal": "lenis/LICENSE",
+      "localEvidence": [
+        "lenis/package.json",
+        "lenis/README.md",
+        "lenis/LICENSE"
+      ]
+    }
+  ]
+}
